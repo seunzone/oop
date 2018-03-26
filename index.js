@@ -42,3 +42,5 @@ class Car extends Motor {
 
 const myCar = new Car(4, "Mercedes", 8000, 2017, "Seun");
 console.log(myCar.details);
+
+module.exports = { Car };
