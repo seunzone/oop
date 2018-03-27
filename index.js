@@ -17,22 +17,21 @@ class Motor {
   }
 }
 
+// feedback: Implement polymorphism
+class Napep extends Motor {
+  constructor(wheels, brand, miles, year, owner) {
+    super(wheels, brand, miles, year, owner);
+  }
+}
+
 // Inheritance: Child class from Parent class
 class Car extends Motor {
   vehicleDetails() {
-    return (
-      "This " +
-      this.brand +
-      " with " +
-      this.wheels +
-      " wheels" +
-      " and a milage limit of " +
-      this.miles +
-      " belongs to " +
-      this.owner +
-      " and was bought in " +
-      this.year
-    );
+    return `This ${this.brand} with ${
+      this.wheels
+    } wheels and a milage limit of ${this.miles} belongs to ${
+      this.owner
+    } and was bought in ${this.year}`;
   }
 
   carPrice() {
