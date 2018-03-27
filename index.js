@@ -8,6 +8,18 @@ class Motor {
     this.owner = owner;
   }
 
+  villageCar(wheels, year) {
+    if(wheels === this.wheels && year === this.year){
+      return 'The Car is in good condition';
+    }
+    else if (wheels !== this.wheels || year !== this.year) {
+      return 'The status of this car is unknown';
+    }
+    else {
+      return 'Anonymous Village Car';
+    }
+  } 
+
   get price() {
     console.log(this.carPrice());
   }
@@ -17,22 +29,30 @@ class Motor {
   }
 }
 
-// Inheritance: Child class from Parent class
+// feedback: Implement polymorphism
+class Napep extends Motor {
+  constructor(wheels, brand, miles, year, owner) {
+    super(wheels, brand, miles, year, owner);
+  }
+
+  villageCar(wheels, year) {
+    if(wheels === this.wheels && year === this.year){
+      return 'Your car looks good';
+    }
+    else {
+      return `Your village people have your car`;
+    }
+  }
+}
+
+
 class Car extends Motor {
   vehicleDetails() {
-    return (
-      "This " +
-      this.brand +
-      " with " +
-      this.wheels +
-      " wheels" +
-      " and a milage limit of " +
-      this.miles +
-      " belongs to " +
-      this.owner +
-      " and was bought in " +
-      this.year
-    );
+    return `This ${this.brand} with ${
+      this.wheels
+    } wheels and a milage limit of ${this.miles} belongs to ${
+      this.owner
+    } and was bought in ${this.year}`;
   }
 
   carPrice() {
